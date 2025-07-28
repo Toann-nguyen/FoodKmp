@@ -10,10 +10,7 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.composeHotReload)
-    alias(libs.plugins.ktor)
-    alias(libs.plugins.kotlinSerialization)
 }
-
 
 kotlin {
     androidTarget {
@@ -113,54 +110,6 @@ android {
 
 dependencies {
     debugImplementation(compose.uiTooling)
-    implementation(projects.shared)
-    // Core Ktor
-    implementation(libs.ktor.serverCore)
-    implementation(libs.ktor.serverNetty)
-    implementation(libs.logback)
-    // Content Negotiation & Serialization
-    implementation(libs.ktor.server.content.negotiation)
-    implementation(libs.ktor.serialization.kotlinx.json)
-    // CORS & Security
-    implementation(libs.ktor.server.cors)
-    implementation(libs.ktor.server.hsts)
-    implementation(libs.ktor.server.default.headers)
-    // Auth
-    implementation(libs.ktor.server.auth)
-    implementation(libs.ktor.server.auth.jwt)
-    // Compression & Caching
-    implementation(libs.ktor.server.compression)
-    implementation(libs.ktor.server.caching.headers)
-
-    // Logging & Monitoring
-    implementation(libs.ktor.server.call.logging)
-    implementation(libs.ktor.server.call.id)
-    // Authentication
-    implementation(libs.ktor.server.auth)
-    implementation(libs.ktor.server.auth.jwt)
-    implementation(libs.ktor.server.sessions)
-
-    // Firebase Auth Provider
-    implementation(libs.firebase.auth.provider)
-
-    // Ktor Client (for external API calls)
-    implementation(libs.ktor.client.core)
-    implementation(libs.ktor.client.apache)
-
-    // Configuration
-    implementation(libs.ktor.server.config.yaml)
-
-    // Dependency Injection (Koin)
-    implementation(libs.ktor.client.core)
-    implementation(libs.ktor.client.apache)
-    // Dependency Injection (Koin)
-    implementation(libs.koin.ktor)
-    implementation(libs.koin.logger.slf4j)
-
-    // Testing
-    testImplementation(libs.ktor.serverTestHost)
-    testImplementation(libs.kotlin.testJunit)
-
 }
 
 compose.desktop {
